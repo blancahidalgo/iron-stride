@@ -17,11 +17,11 @@ Workout.init(
     },
     date:{
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
     },
-    time:{
-      type: DataTypes.TIME,
-      allowNull: false,
+    time:{ //stored in sec, then formatted as a user friendly time by js function
+      type: DataTypes.INT,
+      allowNull: true,
     },
     distance:{
       type: DataTypes.DECIMAL,
@@ -37,11 +37,11 @@ Workout.init(
     },
     planned: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
     },
     completed: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
     },
     category_id:{
       type: DataTypes.INTEGER,
