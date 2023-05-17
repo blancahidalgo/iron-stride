@@ -16,16 +16,20 @@ Workout.init(
       allowNull: false,
     },
     date:{
-      type: DataTypes.DATE,
-      allowNull: false,
+      type: DataTypes.DATEONLY,
+      allowNull: true,
     },
-    time:{
-      type: DataTypes.TIME,
-      allowNull: false,
+    time:{ //stored in sec, then formatted as a user friendly time by js function
+      type: DataTypes.INT,
+      allowNull: true,
     },
     distance:{
       type: DataTypes.DECIMAL,
       allowNull: true,
+    },
+    unit: {
+      type: DataTypes.ENUM('km','m'),
+      allowNull: true
     },
     calories: {
       type: DataTypes.INTEGER,
@@ -33,12 +37,28 @@ Workout.init(
     },
     planned: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
     },
     completed: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
     },
+    category_id:{
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+        unique: false
+      }
+    },
+    user_id:{
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+        unique: false
+      }
+    }
   },
 ),
 {
