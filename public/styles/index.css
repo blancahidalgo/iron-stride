@@ -473,9 +473,12 @@ form .form-input {
 }
 
 .login {
-    /* background-color: #1a1a1a; */
-    width: auto;
     padding-top: 2.5em;
     display: flex;
     justify-content: center;
+}
+
+#login {
+    background: rgba(255, 255, 255, .2);
+    border-radius: 5px;
 }
