@@ -18,21 +18,11 @@
         {{!-- Insert the user's workouts below --}}
         {{#each workoutData as |workout|}}
         <div class="workouts">
-            <h1>
-                {{workout.name}}
-            </h1>
-            <p>
-                Date: {{workout.date}}
-            </p>
-            <p>
-                Elapsed Time: {{workout.time}}
-            </p>
-            <p>
-                Workout Distance: {{workout.distance}}{{workout.unit}}
-            </p>
-            <p>
-                Calories burned: {{workout.calories}}
-            </p>
+            <h1>{{workout.name}}</h1>
+            <p>Date: {{workout.date}}</p>
+            <p>Elapsed Time: {{workout.time}}</p>
+            <p>Workout Distance: {{workout.distance}}{{workout.unit}}</p>
+            <p>Calories burned: {{workout.calories}}</p>
             <p></p>
         </div>
         {{/each}}

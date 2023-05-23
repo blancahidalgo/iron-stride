@@ -3,13 +3,13 @@ const { Workout, User, Category  } = require('../../models');
 
 // GET all workouts
 // For the all activities page
-router.get("/", async (req, res) => {
+router.get("/workout", async (req, res) => {
     try {
       const workoutData = await Workout.findAll({
         include: [{ model: User }, { model: Category }],
         // exclude
       });
-      res.status(200).json(workoutData);
+      res.render("activities-page", { workouts: workoutData });
     } catch (err) {
       res.status(500).json(err);
     }
