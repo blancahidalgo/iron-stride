@@ -20,7 +20,7 @@ Workout.init(
       allowNull: true,
     },
     time:{ //stored in sec, then formatted as a user friendly time by js function
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     distance:{
@@ -60,13 +60,14 @@ Workout.init(
       }
     }
   },
-),
-{
-  sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'workout',
-}
+  {
+    sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'workout',
+  }
+)
+
 
 module.exports = Workout;

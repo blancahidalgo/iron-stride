@@ -8,18 +8,15 @@ Category.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'Workout',
-                key: 'category_id',
-                unique: false
-            },
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
         },
         category_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
     },
-),
     {
         sequelize,
         timestamps: false,
@@ -27,5 +24,7 @@ Category.init(
         underscored: true,
         modelName: 'category',
     }
+)
+    
 
     module.exports = Category;
