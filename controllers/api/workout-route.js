@@ -2,17 +2,41 @@ const router = require('express').Router();
 const { Workout, User, Category  } = require('../../models');
 
 // GET all workouts
-
-router.get("/", async (req, res) => {
+// For the all activities page
+router.get("/workout", async (req, res) => {
     try {
       const workoutData = await Workout.findAll({
         include: [{ model: User }, { model: Category }],
+        // exclude
       });
-      res.status(200).json(workoutData);
+      res.render("activities-page", { workouts: workoutData });
     } catch (err) {
       res.status(500).json(err);
     }
     });
+
+//profile landing page to be udpated
+// router.get('/project/:id', async (req, res) => {
+//   try {
+//     const projectData = await Project.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     const project = projectData.get({ plain: true });
+
+//     res.render('project', {
+//       ...project,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // FIND all workouts
 router.get("/:id", async (req, res) => {
