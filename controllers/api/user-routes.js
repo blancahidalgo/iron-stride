@@ -44,15 +44,19 @@ router.post('/login', async (req, res) => {
 
 //CREATE new user
 router.post('/', async (req, res) => {
+  console.log('creating new user')
+  console.log(req);
   try {
     const userData = await User.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
     });
+    console.log(userData);
     res.status(200).json(userData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
