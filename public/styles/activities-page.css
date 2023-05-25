@@ -1,0 +1,15 @@
+.image-header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 10%;
+  }
+  
+  /* Optional styles to adjust the appearance of the header image
+  .image-header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+   */
