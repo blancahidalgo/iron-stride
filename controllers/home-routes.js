@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const session = require('express-session');
 
 const withAuth = require('../utils/auth')
 
@@ -7,7 +6,7 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -21,7 +20,7 @@ router.get('/signUp', (req,res) =>{
 
 
 router.get('/', (req,res) =>{
-  if (!req.session.loggedIn){
+  if (!req.session.logged_in){
     res.redirect('/login');
     console.log('redirected to /login')
     return;
