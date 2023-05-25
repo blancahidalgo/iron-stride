@@ -1,21 +1,32 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
-// TODO: Import the custom middleware
+
 const withAuth = require('../utils/auth')
-// GET all galleries for homepage
+
 
 
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
+  console.log('login in homeroute');
   res.render('login');
 });
 
-router.get('/', (req, res) => {
+router.get('/signUp', (req,res) =>{
+  res.render('signup');
+})
+
+
+router.get('/', (req,res) =>{
+  if (!req.session.logged_in){
+    res.redirect('/login');
+    console.log('redirected to /login')
+    return;
+  }
   res.render('profile')
-  });
+})
+
 
 module.exports = router;
