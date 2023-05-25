@@ -11,8 +11,11 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
+
+router.get('/', (req, res) => {
+  res.render('profile')
+  });
 
 module.exports = router;
