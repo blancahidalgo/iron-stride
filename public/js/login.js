@@ -1,5 +1,3 @@
-console.log('inside login.js');
-
 const loginFormHandler = async (event) => {
   
   event.preventDefault();
