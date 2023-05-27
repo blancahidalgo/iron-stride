@@ -25,7 +25,9 @@ router.get('/', (req,res) =>{
     console.log('redirected to /login')
     return;
   }
-  res.render('profile')
+  res.render('profile', {
+    logged_in: req.session.logged_in
+  });
 })
 
 
