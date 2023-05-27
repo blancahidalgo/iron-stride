@@ -44,12 +44,13 @@ router.post('/login', async (req, res) => {
 router.post('/', async (req, res) => {
   
   try {
-
+    //check if the supplied email has already been used for a user account
     const existingUser = await User.findAll({where:{ email: req.body.email }})
     if(existingUser){
       res.status(400).json({ message: 'There is already a user with this email address!!' });
       return;
     }
+    //CREATE the User depending on User input in signup page
     const userData = await User.create({
       first_name: req.body.firstName,
       last_name: req.body.lastName,
