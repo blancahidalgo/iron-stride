@@ -4,7 +4,7 @@ const { User } = require("../../models");
 router.post('/login', async (req, res) => {
   try {
     console.log('api/users/login')
-    // running an await function - requesting to find a single user from the data base with a specific email
+    // get the user from the data base with a specific email
     const userData = await User.findOne({where: { email: req.body.email }});
 
     if (!userData) {
@@ -14,11 +14,9 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // This validates the password
-    
+    // This validates the password 
     const validPassword = await userData.checkPassword(req.body.password);
     
-    console.log(`validPassword = ${validPassword}`);
     // if wrong password then 400 error
     if (!validPassword) {
       res
@@ -46,7 +44,7 @@ router.post('/login', async (req, res) => {
 router.post('/', async (req, res) => {
   
   try {
-    
+
     const existingUser = await User.findAll({where:{ email: req.body.email }})
     if(existingUser){
       res.status(400).json({ message: 'There is already a user with this email address!!' });
