@@ -72,7 +72,12 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
     req.session.logged_in = false;
-    console.log(`User is now logged out: `)
+    if (!logged_in){
+      console.log(`User is now logged out!!!`);
+    }else{
+      console.log(`logged-in = ${logged_in}`);
+    }
+    
   } else {
     res.status(404).end();
   }
