@@ -67,17 +67,13 @@ router.post('/', async (req, res) => {
 
 // This will log the user out - when the user selects 'logout'
 router.post('/logout', (req, res) => {
+  console.log(`before login out, logged_in value is ${req.session.logged_in}`);
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-    req.session.logged_in = false;
-    if (!logged_in){
-      console.log(`User is now logged out!!!`);
-    }else{
-      console.log(`logged-in = ${logged_in}`);
-    }
     
+    console.log(`User is now logged out!!!`);  
   } else {
     res.status(404).end();
   }
