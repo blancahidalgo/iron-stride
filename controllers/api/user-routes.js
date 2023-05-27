@@ -44,9 +44,14 @@ router.post('/login', async (req, res) => {
 
 //CREATE new user
 router.post('/', async (req, res) => {
-  console.log('creating new user')
-  console.log(req);
+  
   try {
+    
+    const existingUser = await User.findAll({where:{ email: req.body.email }})
+    if(existingUser){
+      res.status(400).json({ message: 'There is already a user with this email address!!' });
+      return;
+    }
     const userData = await User.create({
       first_name: req.body.firstName,
       last_name: req.body.lastName,
