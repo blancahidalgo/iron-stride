@@ -97,6 +97,4 @@ module.exports = router;
 
 
 
-
-
 // DELETE a workout
