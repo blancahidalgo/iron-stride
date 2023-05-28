@@ -5,7 +5,7 @@ const router = require('express').Router();
 const { Workout, User, Category  } = require('../models');
 
 
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/profile');
     return;
