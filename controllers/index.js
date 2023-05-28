@@ -1,11 +1,12 @@
 const router = require('express').Router();
 
-const workoutRoute = require('./api/workout-route');
-const userRoutes = require('./api/user-routes');
+
+const apiRoutes = require('./api');
+const homeRoutes = require('./home-routes.js');
 
 
-router.use('/workout', workoutRoute);
-router.use('/users', userRoutes);
+router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 
 // localhost:3001/
 router.get('/', async (req, res) => {
@@ -24,8 +25,6 @@ try{
 } catch (err) {
 
 }
-
-})
-
+});
 
 module.exports = router;
