@@ -3,8 +3,9 @@ const { User } = require("../../models");
 
 router.post('/login', async (req, res) => {
   try {
+    console.log('api/users/login')
     // running an await function - requesting to find a single user from the data base with a specific email
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({where: { email: req.body.email }});
 
     if (!userData) {
       res
@@ -14,7 +15,10 @@ router.post('/login', async (req, res) => {
     }
 
     // This validates the password
+    
     const validPassword = await userData.checkPassword(req.body.password);
+    
+    console.log(`validPassword = ${validPassword}`);
     // if wrong password then 400 error
     if (!validPassword) {
       res
@@ -30,10 +34,29 @@ router.post('/login', async (req, res) => {
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
-
-    res.render('login');
-
+    console.log('is logged in:')
+    console.log(req.session.logged_in)
   } catch (err) {
+    console.log('error caught!!!!')
+    res.status(400).json(err);
+  }
+});
+
+//CREATE new user
+router.post('/', async (req, res) => {
+  console.log('creating new user')
+  console.log(req);
+  try {
+    const userData = await User.create({
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    console.log(userData);
+    res.status(200).json(userData);
+  } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

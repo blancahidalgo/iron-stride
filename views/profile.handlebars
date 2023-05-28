@@ -16,13 +16,23 @@
           <div class="card-body text-center">
             <img src="" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">Profile details:</h5>
-            <p class="text-muted mb-1">userName</p>
-            <p class="text-muted mb-4">last name</p>
-            <p class="text-muted mb-4">favorite workout</p>
+            <h5 class="my-3"> Your profile details </h5>
+            <p class="text-muted mb-1">{{ user.first_name }} </p>
+            <p class="text-muted mb-4"> {{ user.last_name }}</p>
+            <p class="text-muted mb-4"> Your favourite workout </p>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Favorite Workout</option>
+              <option value="1">Running</option>
+              <option value="2">Swimming</option>
+              <option value="3">Cycling</option>
+              <option value="4">Yoga</option>
+              <option value="5">Pilates</option>
+              <option value="6">Hiking</option>
+              <option value="7">Skydiving</option>
+            </select>
             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-               <p class="mb-0">instagram</p>
+               <p class="mb-0"> Your Instagram </p>
             </li>
           </div>
         </div>
@@ -32,116 +42,95 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">user highlight</p>
+                <p class="mb-0"> Your User Highlights </p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Longest activity</p>
+                <p class="mb-0"> Your longest activity in time </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">longest activity info</p>
+                <p class="text-muted mb-0"> Your longest activity summarized </p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Longest distance</p>
+                <p class="mb-0"> Your longest distance </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Longest distance </p>
+                <p class="text-muted mb-0"> Distance kms </p> 
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
+                <p class="mb-0"> Your higgest calorie hit! </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0"> Number of Calories </p>
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                <p class="mb-4"><span class="text-primary font-italic me-1"> Your most recent workout </span> 
                 </p>
-                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <p class="mb-1" style="font-size: .77rem;"> Category </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Date and Time </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Time Duration </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Distance </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Location </p>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                </p>
-                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+                <p class="mb-4"><span class="text-primary font-italic me-1"> Your most recent workout </span> 
+                  </p>
+                <p class="mb-1" style="font-size: .77rem;"> Category </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Date and Time </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Time Duration </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Distance </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Location </p>   
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+       </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

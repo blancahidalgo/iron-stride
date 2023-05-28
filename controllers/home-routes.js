@@ -10,7 +10,6 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
   res.render('login');
 });
 
@@ -35,6 +34,7 @@ router.get("/workout", async (req, res) => {
     res.status(500).json(err);
   }
   });
+
 
 
 module.exports = router;
