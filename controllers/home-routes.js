@@ -7,7 +7,7 @@ const { Workout, User, Category  } = require('../models');
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
   res.render('login');
