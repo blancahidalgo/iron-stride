@@ -1,49 +1,40 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
 // TODO: Import the custom middleware
-const withAuth = require('../utils/auth')
+// const withAuth = require('../utils/auth')
 // GET all galleries for homepage
-
+const { Workout, User, Category  } = require('../models');
 
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/profile');
     return;
   }
   res.render('login');
 });
 
-router.get('/', (req, res) => {
-  res.render('profile')
-  //console.log
+router.get('/profile', (req, res) => {
+  
 
-router.get('/user/:id', async (req, res) => {
-    try {
-        const dbUserData = await User.findById(req.params.id, {
-            include: [
-                {
-                    model: Workout,
-                    attributes: ['name', 'time', 'distance']
-                },
-            ],
-            exclude: [
-                {
-                    attributes: ['password'],
-                },
-            ],
-        });
-        const users = dbUserData.map((User) =>
-        User.get({plain: true})
-        );
-        res.render('profile', {
-            users,
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-  });
+  res.render('profile');
 });
+
+// For the all activities page
+router.get("/workout", async (req, res) => {
+  try {
+    const workoutData = await Workout.findAll({
+      include: [{ model: User }, { model: Category }],
+      // exclude
+    });
+
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
+    res.render("activities-page", { workouts });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
+
+
 
 module.exports = router;

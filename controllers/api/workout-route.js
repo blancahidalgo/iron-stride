@@ -9,7 +9,10 @@ router.get("/workout", async (req, res) => {
         include: [{ model: User }, { model: Category }],
         // exclude
       });
-      res.render("activities-page", { workouts: workoutData });
+
+      const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
+      res.render("activities-page", { workouts: workouts });
     } catch (err) {
       res.status(500).json(err);
     }
