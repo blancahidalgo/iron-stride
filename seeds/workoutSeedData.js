@@ -4,7 +4,7 @@ const workoutData =
 [{
   name:"marathon",
   date:"2023-03-02",
-  time: 10800 ,
+  time: 180 ,
   distance: 42.195,
   unit:'km',
   calories: 2520,
@@ -16,7 +16,7 @@ const workoutData =
 {
   name:"Ocean swim",
   date: null,
-  time: null ,
+  time: 30 ,
   distance: 1.5,
   unit:'km',
   calories:null,
@@ -28,7 +28,7 @@ const workoutData =
 {
   name:"bicycle race",
   date:"2023-04-12",
-  time: 10800,
+  time: 180 ,
   distance: 100,
   unit:'km',
   calories: 1500,
@@ -40,7 +40,7 @@ const workoutData =
 {
   name:"Bike ride",
   date:"2023-05-29",
-  time: 9800 ,
+  time: 165 ,
   distance: 80,
   unit:'km',
   calories: 1100,
@@ -52,7 +52,7 @@ const workoutData =
 {
   name:"Short bike ride",
   date:"2023-05-23",
-  time: 6800 ,
+  time: 60 ,
   distance: 20,
   unit:'km',
   calories: 600,
@@ -64,7 +64,7 @@ const workoutData =
 {
   name:"Long bike ride",
   date:"2023-05-30",
-  time: 14400 ,
+  time: 360 ,
   distance: 180,
   unit:'km',
   calories: 4500,
@@ -76,7 +76,7 @@ const workoutData =
 {
   name: "morning run",
   date: "2023-05-01",
-  time: 2400,
+  time: 65,
   distance: 10.5,
   unit: "km",
   calories: 800,
@@ -88,7 +88,7 @@ const workoutData =
 {
   name: "swimming laps",
   date: "2023-05-05",
-  time: 1800,
+  time: 45,
   distance: 1.5,
   unit: "km",
   calories: 350,
@@ -100,7 +100,7 @@ const workoutData =
 {
   name: "evening bike ride",
   date: "2023-05-12",
-  time: 3600,
+  time: 44,
   distance: 20.2,
   unit: "km",
   calories: 950,
@@ -112,7 +112,7 @@ const workoutData =
 {
   name: "yoga class",
   date: "2023-05-18",
-  time: 5400,
+  time: 60,
   distance: 0,
   unit: "km",
   calories: 300,
@@ -124,7 +124,7 @@ const workoutData =
 {
   name: "hiking adventure",
   date: "2023-05-22",
-  time: 7200,
+  time: 120,
   distance: 12.8,
   unit: "km",
   calories: 1200,
@@ -136,7 +136,7 @@ const workoutData =
 {
   name: "indoor cycling",
   date: "2023-05-03",
-  time: 2700,
+  time: 29,
   distance: 15,
   unit: "km",
   calories: 700,
@@ -148,7 +148,7 @@ const workoutData =
 {
   name: "morning swim",
   date: "2023-05-07",
-  time: 1800,
+  time: 32,
   distance: 1.2,
   unit: "km",
   calories: 300,
@@ -160,7 +160,7 @@ const workoutData =
 {
   name: "yoga at the park",
   date: "2023-05-11",
-  time: 2700,
+  time: 45,
   distance: 0,
   unit: "km",
   calories: 250,
@@ -172,7 +172,7 @@ const workoutData =
 {
   name: "evening jog",
   date: "2023-05-15",
-  time: 2100,
+  time: 35,
   distance: 7,
   unit: "km",
   calories: 550,
@@ -184,7 +184,7 @@ const workoutData =
 {
   name: "cycling in the mountains",
   date: "2023-05-19",
-  time: 10800,
+  time: 180,
   distance: 45.6,
   unit: "km",
   calories: 1800,
@@ -196,7 +196,7 @@ const workoutData =
 {
   name: "pilates session",
   date: "2023-05-02",
-  time: 3600,
+  time: 60,
   distance: 0,
   unit: "km",
   calories: 200,
@@ -208,7 +208,7 @@ const workoutData =
 {
   name: "evening swim",
   date: "2023-05-06",
-  time: 2100,
+  time: 35,
   distance: 1.8,
   unit: "km",
   calories: 400,
@@ -220,7 +220,7 @@ const workoutData =
 {
   name: "cycling to work",
   date: "2023-05-10",
-  time: 1800,
+  time: 30,
   distance: 9,
   unit: "km",
   calories: 400,
@@ -232,7 +232,7 @@ const workoutData =
 {
   name: "yoga retreat",
   date: "2023-05-14",
-  time: 14400,
+  time: 240,
   distance: 0,
   unit: "km",
   calories: 600,
@@ -244,7 +244,7 @@ const workoutData =
 {
   name: "hiking in the national park",
   date: "2023-05-17",
-  time: 5400,
+  time: 90,
   distance: 8.5,
   unit: "km",
   calories: 1000,
@@ -256,7 +256,7 @@ const workoutData =
 {
   name: "morning jog by the beach",
   date: "2023-05-21",
-  time: 2700,
+  time: 45,
   distance: 7.8,
   unit: "km",
   calories: 600,
@@ -268,7 +268,7 @@ const workoutData =
 {
   name: "swimming drills",
   date: "2023-05-04",
-  time: 2700,
+  time: 45,
   distance: 2,
   unit: "km",
   calories: 500,
@@ -280,7 +280,7 @@ const workoutData =
 {
   name: "cycling tour with friends",
   date: "2023-05-09",
-  time: 7200,
+  time: 120,
   distance: 35.2,
   unit: "km",
   calories: 1600,
@@ -292,7 +292,7 @@ const workoutData =
 {
   name: "yoga at sunrise",
   date: "2023-05-13",
-  time: 3600,
+  time: 60,
   distance: 0,
   unit: "km",
   calories: 300,
@@ -304,7 +304,7 @@ const workoutData =
 {
   name: "hiking up the mountain",
   date: "2023-05-16",
-  time: 7200,
+  time: 120,
   distance: 15,
   unit: "km",
   calories: 1100,
@@ -316,7 +316,7 @@ const workoutData =
 {
   name: "morning run in the park",
   date: "2023-05-20",
-  time: 2400,
+  time: 40,
   distance: 9.5,
   unit: "km",
   calories: 700,
@@ -328,7 +328,7 @@ const workoutData =
 {
   name: "swimming at the community pool",
   date: "2023-05-24",
-  time: 1800,
+  time: 30,
   distance: 1.2,
   unit: "km",
   calories: 350,
@@ -340,7 +340,7 @@ const workoutData =
 {
   name: "cycling challenge",
   date: "2023-05-26",
-  time: 10800,
+  time: 180,
   distance: 55.3,
   unit: "km",
   calories: 2100,
@@ -352,7 +352,7 @@ const workoutData =
 {
   name: "yoga for relaxation",
   date: "2023-05-08",
-  time: 3600,
+  time: 60,
   distance: 0,
   unit: "km",
   calories: 250,
@@ -364,7 +364,7 @@ const workoutData =
 {
   name: "evening hike",
   date: "2023-05-23",
-  time: 5400,
+  time: 90,
   distance: 6.7,
   unit: "km",
   calories: 800,
@@ -376,7 +376,7 @@ const workoutData =
 {
   name: "morning jog in the city",
   date: "2023-05-28",
-  time: 2100,
+  time: 35,
   distance: 8.5,
   unit: "km",
   calories: 650,
