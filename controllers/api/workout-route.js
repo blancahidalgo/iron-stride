@@ -1,62 +1,9 @@
 const router = require('express').Router();
-const { where } = require('sequelize');
+///const { where } = require('sequelize');
 const { Workout, User, Category  } = require('../../models');
 
 // GET all workouts
 // For the all activities page
-
-// api/workout/workout
-// router.get("/workout", async (req, res) => {
-//     try {
-//       // function a(c,d); // a(1,2); // a({..}, {..})
-//       // object {
-//       //  key1: value,
-//       //  key2: value,
-//       //  key3: [], // obj.key3[0]
-//       //  key4: {}
-//       //
-//       //}
-//       // SELECT * FROM workout WHERE user_id=1
-//       const workoutData = await Workout.findAll ( 
-//         {
-//           where: {
-//               user_id:1,
-//           },
-//         include: [{ model: User }, { model: Category }],
-//         // exclude
-//       });
-      
-//       const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-//       console.log(workouts)
-      
-//       res.render("activities-page", { workouts: workouts });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//     });
-
-//profile landing page to be udpated
-// router.get('/project/:id', async (req, res) => {
-//   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const project = projectData.get({ plain: true });
-
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // FIND all workouts
 router.get("/:id", async (req, res) => {
