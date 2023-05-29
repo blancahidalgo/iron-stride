@@ -16,6 +16,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signUp', (req,res) =>{
     res.render('signup');
+    // res.render('addActivity');
 });
 
 router.get('/', async(req, res) => {
