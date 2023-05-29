@@ -1,0 +1,57 @@
+<div class="add-activity">
+    <div class="col-8 col-lg-6" id="add-activity">
+        <h1 class="m-0 text-center">Add Activity</h1>
+        <form class="justify-center justify-space-between-md align-center" id="add-activity-form">
+            <div>
+                {{!-- <label for="">Category</label> --}}
+                <h4>Category</h4>
+                <label for=""></label>
+                <select name="optone" id="sportSel" size="1" class="form-input w-50">
+                    <option value="" selected="selected">Select Sport</option>
+                </select>
+                <label for=""></label>
+                <select name="opttwo" id="activitySel" size="1" class="form-input w-50">
+                    <option value="" selected="selected">Please select sport first</option>
+                </select>
+            </div>
+            <div>
+                <h4>Activity Stats</h4>
+                <div>
+                    <label for="">Date</label>
+                    <input type="date" id="date" value="yyyy-mm-dd" class="form-input w-50">
+                </div>
+                <div>
+                    <label for="">Time</label>
+                    <input type="time" id="time" value="hh:mm" class="form-input w-50">
+                </div>
+                <div>
+                    <label for="">Duration (min)</label>
+                    <input name="" id="duration" placeholder="" value="" class="form-input w-50" />
+                </div>
+                <div>
+                    <label for="">Distance (km)</label>
+                    <input name="" id="distance" placeholder="" value="" class="form-input w-50" />
+                </div>
+                <div>
+                    <label for="">Calories Burned (kJ)</label>
+                    <input name="" id="calories" placeholder="" value="" class="form-input w-50" />
+                </div>
+                <div>
+                    <label for="">Planned</label>
+                    <input type="radio" name="planned" id="planned" value="planned"/>
+                </div>
+                <div>
+                    <label for="">Completed</label>
+                    <input type="radio" name="completed" id="completed" value="completed"/>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-danger btn-block py-3 w-100" type="submit">
+                    SAVE ACTIVITY
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="./js/addActivity.js"></script>

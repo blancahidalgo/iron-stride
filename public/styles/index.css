@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
+ html {
     line-height: 1.15;
     /* 1 */
     -webkit-text-size-adjust: 100%;
@@ -198,7 +198,7 @@ button,
        */
 button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,s
 [type='submit']::-moz-focus-inner {
     border-style: none;
     padding: 0;
@@ -472,13 +472,23 @@ form .form-input {
     justify-content: space-between;
 }
 
-.login {
+.login,
+.signup,
+.add-activity {
     padding-top: 2.5em;
     display: flex;
     justify-content: center;
 }
 
-#login {
+#login,
+#add-activity {
     background: rgba(255, 255, 255, .2);
     border-radius: 5px;
 }
+
+label {
+    width: 30%;
+    display: inline-block;
+}
+
+
