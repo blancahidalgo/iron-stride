@@ -1,10 +1,12 @@
+
+
 <section style="background-color: #eeeeee;">
   <div class="container py-5">
     <div class="row">
       <div class="col">
         <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile {{userInfo.test}}</li>
           </ol>
         </nav>
       </div>
@@ -17,8 +19,8 @@
             <img src="" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3"> Your profile details </h5>
-            <p class="text-muted mb-1">{{ user.first_name }} </p>
-            <p class="text-muted mb-4"> {{ user.last_name }}</p>
+            <p class="text-muted mb-1">{{ userInfo.first_name }} </p>
+            <p class="text-muted mb-4"> {{ userInfo.last_name }}</p>
             <p class="text-muted mb-4"> Your favourite workout </p>
             <select class="form-select" aria-label="Default select example">
               <option selected>Favorite Workout</option>
@@ -76,32 +78,21 @@
           </div>
         </div>
         <div class="row">
+          {{#each userInfo.workouts}}
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
                 <p class="mb-4"><span class="text-primary font-italic me-1"> Your most recent workout </span> 
                 </p>
-                <p class="mb-1" style="font-size: .77rem;"> Category </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Date and Time </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Time Duration </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Distance </p>
+                <p class="mb-1" style="font-size: .77rem;"> Category: {{name}} </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Date and Time: {{date}} </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Time Duration {{time}} </p>
+                <p class="mt-4 mb-1" style="font-size: .77rem;"> Distance {{distance}} </p>
                 <p class="mt-4 mb-1" style="font-size: .77rem;"> Location </p>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1"> Your most recent workout </span> 
-                  </p>
-                <p class="mb-1" style="font-size: .77rem;"> Category </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Date and Time </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Time Duration </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Distance </p>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"> Location </p>   
-                </div>
-              </div>
-            </div>
+          {{/each}}
        </div>
 </section>
 
