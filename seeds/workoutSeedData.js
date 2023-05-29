@@ -28,7 +28,7 @@ const workoutData =
 {
   name:"bicycle race",
   date:"2023-04-12",
-  time: 10800 ,
+  time: 10800,
   distance: 100,
   unit:'km',
   calories: 1500,
