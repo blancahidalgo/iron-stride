@@ -66,7 +66,7 @@ router.get('/', async(req, res) => {
     
     res.render('profile', {
       logged_in: req.session.logged_in,
-      userInfo
+      userInfo,
     })
   });
 
@@ -117,7 +117,7 @@ router.get("/workout", async (req, res) => {
     });
 
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-    res.render("activities-page", { workouts });
+    res.render("activities-page", { workouts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   } // try
