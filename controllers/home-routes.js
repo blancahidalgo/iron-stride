@@ -37,6 +37,7 @@ router.get('/', async(req, res) => {
          { id: req.session.user_id }
         }
       );
+      console.log(userData);
       let meUser = userData.get({ plain: true });
 
 
