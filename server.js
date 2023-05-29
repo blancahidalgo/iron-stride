@@ -37,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Sets up the routes
 app.use(routes);
 
+
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
