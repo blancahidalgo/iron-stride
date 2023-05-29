@@ -18,10 +18,12 @@
                     <a href="/">Iron-Stride</a>
                 </h1>
                 <nav>
+                    <a href="/">Profile</a> |
+                    <a href="/workout">My Activities</a> |
                     <!-- Conditionally render login or logout links -->
                     {{#if logged_in}}
-                    <a href="/profile">Profile</a> |
-                    <a href="/workout">My Activities</a> |
+                    {{!-- <a href="/profile">Profile</a> |
+                    <a href="/workout">My Activities</a> | --}}
                     <button class="no-button" id="logout">Logout</button>
                     {{else}}
                     <a href="/login">Login</a>
