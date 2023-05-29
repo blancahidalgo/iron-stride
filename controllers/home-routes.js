@@ -47,9 +47,7 @@ router.get('/user/:id', async (req, res) => {
         const users = dbUserData.map((User) =>
         User.get({plain: true})
         );
-        res.render('profile', {
-            users,
-        });
+        res.render('profile', { users });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
