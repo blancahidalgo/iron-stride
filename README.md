@@ -27,14 +27,30 @@ Iron Stride is a comprehensive fitness tracking application that allows users to
  - Recent Activity: On the homepage, users can quickly access their most recent activity, allowing them to stay up to date with their latest workout session and track their progress over time.
 
 ## Installation
-TBC
+Iron Stride is already deployed on Heroku, so you can access it directly without any installation steps. Follow the link below to access the deployed app:
+- https://iron-stride.herokuapp.com/login
 
 ## Usage
-TBC
+
+To use Iron Stride, follow these steps:
+
+1. Open the app by visiting the following link: [Iron Stride](https://iron-stride.herokuapp.com/login)
+
+2. Sign up for a new account or log in if you already have one.
+
+3. Once logged in, you will be directed to your personalised homepage, where you can see your fitness achievements and workout highlights.
+
+4. To add a new workout, navigate to the "Add Workout" or "New Workout" section. Enter the details of your workout, such as the date, time, distance, duration, and calories burned.
+
+5. Explore the different sections of the app, such as the activities page to view your workout history or the profile customization options to personalise your profile.
+
+6. Use the navigation menu or buttons provided to access different features and functionalities of Iron Stride.
+
+7. Enjoy tracking and managing your workouts with Iron Stride, and stay motivated on your fitness journey!
 
 ## Links
-
-https://github.com/blancahidalgo/iron-stride
+- https://iron-stride.herokuapp.com/login
+- https://github.com/blancahidalgo/iron-stride
 
 ## Contributing
 Contributions to Iron Stride are welcome! If you encounter any issues or have suggestions for enhancements, please submit an issue or a pull request. Let's make Iron Stride even better together!
