@@ -1,9 +1,12 @@
 <section style="background-color: #eeeeee;">
   <div class="my-activities ms-5 p-4">
+    <h1 class="Activities-Page-Header text-decoration-underline">
+      Your most recent workouts below!
+    </h1>
     {{! Insert the user's workouts below }}
     {{#each workouts as |workout|}}
-      <div class="workouts">
-        <h1>
+      <div class="workouts" style="background-color: white">
+        <h3>
           {{workout.name}}
           {{#if workout.completed}}
             <div class="card bg-success d-inline-block">
@@ -18,10 +21,10 @@
               </div>
             </div>
           {{/if}}
-        </h1>
+        </h3>
         <p class="ms-5">Date: {{workout.date}}</p>
-        <p class="ms-5">Elapsed Time: {{workout.time}}</p>
-        <p class="ms-5">Workout Distance:{{workout.distance}}{{workout.unit}}</p>
+        <p class="ms-5">Elapsed Time: {{workout.time}} minutes</p>
+        <p class="ms-5">Workout Distance: {{workout.distance}}{{workout.unit}}</p>
         <p class="ms-5">Calories burned: {{workout.calories}}</p>
 
         <p></p>

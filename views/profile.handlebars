@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col">
         <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item active" aria-current="page"> All about your workouts here! </li>
-          </ol>
+          <div class="breadcrumb mb-0">
+            <h1 class="breadcrumb-item active" aria-current="page"> All about your workouts here! </h1>
+          </div>
         </nav>
       </div>
     </div>
@@ -14,8 +14,9 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="" alt="avatar"
+            <img src="{{userInfo.image}}" alt="{{userInfo.first_name }}"
               class="rounded-circle img-fluid" style="width: 150px;">
+
             <h5 class="my-3">  </h5>
             <p class="text-muted mb-1"> {{ userInfo.first_name }} </p>
             <p class="text-muted mb-4"> {{ userInfo.last_name }} </p>
@@ -32,7 +33,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0"> Highlights </p>
+                <h5 class="mb-0"> Highlights </h5>
               </div>
             </div>
             <hr>
@@ -41,7 +42,7 @@
                 <p class="mb-0"> Your longest activity in time </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Your longest activity  </p>
+                <p class="text-muted mb-0"> {{userInfo.longestActivityTime}} minutes </p>
               </div>
             </div>
             <hr>
@@ -50,16 +51,17 @@
                 <p class="mb-0"> Your longest distance </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Distance -   (km)</p> 
+
+                <p class="text-muted mb-0"> {{userInfo.maxDistance}} km</p> 
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0"> Your higgest calorie hit! </p>
+                <p class="mb-0"> Your highest calorie hit! </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Number of Calories </p>
+                <p class="text-muted mb-0"> {{userInfo.maxCalorie}} Kcal </p>
               </div>
             </div>
             <hr>
@@ -83,6 +85,7 @@
        </div>
 </section>
 
+<script src="./js/profile.js"></script>
 
 
 

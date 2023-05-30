@@ -2,7 +2,7 @@ const router = require('express').Router();
 // TODO: Import the custom middleware
 // const withAuth = require('../utils/auth')
 // GET all galleries for homepage
-const { Workout, User, Category  } = require('../models');
+const { Workout, User, Category } = require('../models');
 
 
 router.get('/login', (req, res) => {
@@ -14,87 +14,109 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/signUp', (req,res) =>{
-    res.render('signup');
-    // res.render('addActivity');
+router.get('/signUp', (req, res) => {
+  res.render('signup');
+  // res.render('addActivity');
 });
 
-router.get('/', async(req, res) => {
-    if (!req.session.logged_in){
-      res.redirect('/login');
-      console.log('redirected to /login')
-      return;
+router.get('/', async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    console.log('redirected to /login')
+    return;
+  }
+
+  // logged in so req.session.user_id
+  // then can pull in user info
+  // first_name
+  // last_name
+  // email
+  const userData = await User.findOne(
+    {
+      where:
+        { id: req.session.user_id }
     }
-
-    // logged in so req.session.user_id
-    // then can pull in user info
-      // first_name
-      // last_name
-      // email
-    const userData = await User.findOne(
-      {
-        where:
-         { id: req.session.user_id }
-        }
-      );
-      console.log(userData);
-      let meUser = userData.get({ plain: true });
+  );
+  console.log(userData);
+  let meUser = userData.get({ plain: true });
 
 
-    // Then like we did at "workouts" route, pull in workouts
-    // But we only need the first two workouts
-    // Array.slice(0,2) // return array of 0-2 items
+  // Then like we did at "workouts" route, pull in workouts
+  // But we only need the first two workouts
+  // Array.slice(0,2) // return array of 0-2 items
 
-      const workoutData = await Workout.findAll(
-        {
-          where: {
-            user_id: req.session.user_id
-          }
-        },{
-        include: [{ model: User }, { model: Category }],
-        // exclude
-      });
-  
-      let workouts = workoutData.map((workout) => workout.get({ plain: true }));
-      workouts = workouts.slice(0,2);
-
-      let userInfo = {
-        ...meUser,
-        workouts
+  const workoutData = await Workout.findAll(
+    {
+      where: {
+        user_id: req.session.user_id
       }
-      console.log(userInfo);
-
-    
-    res.render('profile', {
-      logged_in: req.session.logged_in,
-      userInfo,
-    })
+    }, {
+    include: [{ model: User }, { model: Category }],
+    // exclude
   });
+
+  let workouts = workoutData.map((workout) => workout.get({ plain: true }));
+  workouts = workouts.slice(0, 2);
+  console.log(workouts)
+
+  let maxDistance = workouts.reduce((max, activity) => {
+    let activityDistance = parseFloat(activity.distance);
+    return activityDistance > max ? activityDistance : max;
+  }, 0);
+  console.log(maxDistance)
+
+  let longestActivityTime = workouts.reduce((max, activity) => {
+    let activityTime = parseFloat(activity.time);
+    return activityTime > max ? activityTime : max;
+  }, 0);
+  console.log(longestActivityTime)
+
+  let maxCalorie = workouts.reduce((max, activity) => {
+    let calorie = parseFloat(activity.calories);
+    return calorie > max ? calorie : max;
+  }, 0);
+  console.log(maxCalorie)
+
+  let userInfo = {
+    ...meUser,
+    workouts,
+    longestActivityTime,
+    maxDistance,
+    maxCalorie,
+  } 
+  console.log(userInfo);
+
+
+  res.render('profile', {
+    logged_in: req.session.logged_in,
+    userInfo,
+  })
+});
 
 router.get('/user/:id', async (req, res) => {
-    try {
-        const dbUserData = await User.findById(req.params.id, {
-            include: [
-                {
-                    model: Workout,
-                    attributes: ['name', 'time', 'distance']
-                },
-            ],
-            exclude: [
-                {
-                    attributes: ['password'],
-                },
-            ],
-        });
-        const users = dbUserData.map((User) =>
-        User.get({plain: true})
-        );
-        res.render('profile', { users });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-  });
+  try {
+    const dbUserData = await User.findById(req.params.id, {
+      include: [
+        {
+          model: Workout,
+          attributes: ['name', 'time', 'distance']
+        },
+      ],
+      exclude: [
+        {
+          attributes: ['password'],
+        },
+      ],
+    });
+    const users = dbUserData.map((User) =>
+      User.get({ plain: true })
+    );
+    res.render('profile', { users });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 
 // For the all activities page
@@ -112,7 +134,7 @@ router.get("/workout", async (req, res) => {
         where: {
           user_id: req.session.user_id
         }
-      },{
+      }, {
       include: [{ model: User }, { model: Category }],
       // exclude
     });
