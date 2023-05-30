@@ -18,11 +18,11 @@
           <div class="card-body text-center">
             <img src="" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">  </h5>
-            <p class="text-muted mb-1"> {{ userInfo.first_name }} </p>
-            <p class="text-muted mb-4"> {{ userInfo.last_name }} </p>
-            <p class="text-muted mb-4"> My favourite workout:  {{ userInfo.fav_workout }} </p>
-            {{!-- <select class="form-select" aria-label="Default select example">
+            <h5 class="my-3"> Your profile details </h5>
+            <p class="text-muted mb-1">{{ userInfo.first_name }} </p>
+            <p class="text-muted mb-4"> {{ userInfo.last_name }}</p>
+            <p class="text-muted mb-4"> Your favourite workout </p>
+            <select id="workoutsDropdown" class="form-select" aria-label="Default select example">
               <option selected>Favorite Workout</option>
               <option value="1">Running</option>
               <option value="2">Swimming</option>
@@ -53,7 +53,7 @@
                 <p class="mb-0"> Your longest activity in time </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Your longest activity  </p>
+                <p class="text-muted mb-0"> {{userInfo.longestActivityTime}} minutes </p>
               </div>
             </div>
             <hr>
@@ -62,7 +62,8 @@
                 <p class="mb-0"> Your longest distance </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Distance -   (km)</p> 
+
+                <p class="text-muted mb-0"> {{userInfo.maxDistance}} km</p> 
               </div>
             </div>
             <hr>
@@ -71,7 +72,7 @@
                 <p class="mb-0"> Your higgest calorie hit! </p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"> Number of Calories </p>
+                <p class="text-muted mb-0"> {{userInfo.maxCalorie}} Kcal </p>
               </div>
             </div>
             <hr>
@@ -95,6 +96,7 @@
        </div>
 </section>
 
+<script src="./js/profile.js"></script>
 
 
 
