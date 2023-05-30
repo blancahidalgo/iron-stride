@@ -6,6 +6,7 @@ const userData = [
         last_name: 'Golder',
         email: 'rgolder78@gmail.com',
         password: 'Password123!',
+        fav_workout: 'Skydiving',
         image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
     {
@@ -20,6 +21,7 @@ const userData = [
         first_name: 'Grethel',
         last_name: 'Reyes',
         email: 'reyes.grethelmaec@gmail.com',
+        fav_workout: 'Yoga',
         password: 'Password123!',
         image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
