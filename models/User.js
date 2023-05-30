@@ -38,28 +38,30 @@ User.init(
                 len: [8],
             },
         },
-        image: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         fav_workout: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
+    
+         image: {
+             type: DataTypes.STRING,
+             allowNull: false,
+        },
+    },
+     {
     
         hooks: {
             beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
-            
         },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
-    }
+    },
 );
 
 module.exports = User;
