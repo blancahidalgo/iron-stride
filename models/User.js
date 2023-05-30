@@ -38,6 +38,10 @@ User.init(
                 len: [8],
             },
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
     {
         hooks: {
