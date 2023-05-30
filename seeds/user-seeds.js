@@ -6,7 +6,7 @@ const userData = [
         last_name: 'Golder',
         email: 'rgolder78@gmail.com',
         password: 'Password123!',
-        image: '',
+        image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
     {
         first_name: 'Blanca',
@@ -14,13 +14,14 @@ const userData = [
         email: 'b.hidalgo.ley@gmail.com',
         password: 'Password123!',
         fav_workout: 'Running',
+        image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
     {
         first_name: 'Grethel',
         last_name: 'Reyes',
         email: 'reyes.grethelmaec@gmail.com',
         password: 'Password123!',
-        image: '',
+        image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
     {
         first_name: 'Jeremy',
@@ -28,6 +29,7 @@ const userData = [
         email: 'jejedech.63@gmail.com',
         password: 'Password123!',
         fav_workout: 'Crossfit',
+        image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
     {
         first_name: 'Jeison',
@@ -35,6 +37,7 @@ const userData = [
         email: 'jfajardobolivar@gmail.com',
         password: 'Password123!',
         fav_workout: 'Swimming',
+        image: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg',
     },
 ];
 
