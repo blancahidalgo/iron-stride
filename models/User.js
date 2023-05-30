@@ -42,6 +42,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: true,
     }},
+    
     {
         hooks: {
             beforeCreate: async (newUserData) => {
