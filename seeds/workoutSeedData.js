@@ -11,7 +11,7 @@ const workoutData =
   planned: false,
   completed: true,
   category_id: 1,
-  user_id: 2
+  user_id: 1
 },
 {
   name:"Ocean swim",
@@ -35,7 +35,7 @@ const workoutData =
   planned:true,
   completed:true,
   category_id: 3,
-  user_id: 2
+  user_id: 5
 },
 {
   name:"Bike ride",
@@ -167,7 +167,7 @@ const workoutData =
   planned: true,
   completed: true,
   category_id: 4,
-  user_id: 2,
+  user_id: 1,
 },
 {
   name: "evening jog",
@@ -299,7 +299,7 @@ const workoutData =
   planned: true,
   completed: true,
   category_id: 4,
-  user_id: 2,
+  user_id: 5,
 },
 {
   name: "hiking up the mountain",
@@ -323,7 +323,7 @@ const workoutData =
   planned: true,
   completed: true,
   category_id: 1,
-  user_id: 3,
+  user_id: 1,
 },
 {
   name: "swimming at the community pool",
@@ -371,7 +371,7 @@ const workoutData =
   planned: true,
   completed: true,
   category_id: 6,
-  user_id: 3,
+  user_id: 5,
 },
 {
   name: "morning jog in the city",
