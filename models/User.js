@@ -38,7 +38,11 @@ User.init(
                 len: [8],
             },
         },
-    },
+        fav_workout: {
+            type: DataTypes.STRING,
+            allowNull: true,
+    }},
+    
     {
         hooks: {
             beforeCreate: async (newUserData) => {
